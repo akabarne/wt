@@ -1,4 +1,4 @@
-console.log("gehts?")
+console.log("gehts???")
 console.log($("#weight").val())
 console.log($("#weight"))
 
