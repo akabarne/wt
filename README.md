@@ -1,3 +1,3 @@
 # wt
 
-This is a weight tracking app 
+This is a weight tracking app!
