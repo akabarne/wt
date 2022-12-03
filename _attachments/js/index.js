@@ -1,19 +1,3 @@
-console.log (
-    $.ajax({
-    url: config.srv + config.date_weight_path,
-    type: 'get',
-    headers: {
-        'Content-Type': 'application/json'
-    },
-    beforeSend: function (xhr) {
-        xhr.setRequestHeader (
-        "Authorization", "Basic " + btoa(config.usr + ":" + config.pwd));
-    },
-    success: function (data) {
-        console.info(data);
-    }
-}))
-
 getDate = function(){
     const date = new Date();
 
@@ -23,7 +7,6 @@ let year = date.getFullYear();
 return `${day}-${month}-${year}`
 
 };
-
 
 $("#addWeight").click(function(){
     $.ajax({
@@ -37,23 +20,21 @@ $("#addWeight").click(function(){
             'Content-Type': 'application/json'
         },
         dataType: 'json',
-	beforeSend: function (xhr) {
-	    xhr.setRequestHeader (
-		"Authorization", "Basic " + btoa(config.usr + ":" + config.pwd));
-	},
+        beforeSend: function (xhr) {
+            xhr.setRequestHeader (
+            "Authorization", "Basic " + btoa(config.usr + ":" + config.pwd));
+        },
         success: function (data) {
-            console.info(data);
+
         }
     })
     
 })
 
-for(i in data.rows) {
-    console.log(data.rows[i].value);
-    console.log(data.rows[i].key);
-}
 
-var a = {"total_rows":8,"offset":0,"rows":[
+
+var data = {"total_rows":8,"offset":0,
+"rows":[
     {"id":"69d17d5cc2c877a85d0d73b2b002d444","key":"2-12-2022","value":"98","doc":{"_id":"69d17d5cc2c877a85d0d73b2b002d444","_rev":"1-28faabd3e885cf0bc368288a6794b4ad","weight":"98","date":"2-12-2022"}},
     {"id":"69d17d5cc2c877a85d0d73b2b0014e10","key":"2022-11-24","value":80,"doc":{"_id":"69d17d5cc2c877a85d0d73b2b0014e10","_rev":"1-1355454ffe426a41276d7a24a146535b","weight":80,"date":"2022-11-24"}},
     {"id":"69d17d5cc2c877a85d0d73b2b0018008","key":"2022-11-24","value":80,"doc":{"_id":"69d17d5cc2c877a85d0d73b2b0018008","_rev":"1-1355454ffe426a41276d7a24a146535b","weight":80,"date":"2022-11-24"}},
