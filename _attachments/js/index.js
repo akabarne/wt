@@ -3,6 +3,8 @@ console.log($("#weight").val())
 console.log($("#weight"))
 
 
+
+
 const srv = "http://5.45.102.31:5984/wt"
 //http://5.45.102.31:5984/wt/_design/wt/_view/weightdate
 const date_weight_path = "/_design/wt/_view/weightdate"
@@ -31,6 +33,10 @@ $("#addWeight").click(function(){
             'Content-Type': 'application/json'
         },
         dataType: 'json',
+	beforeSend: function (xhr) {
+	    xhr.setRequestHeader (
+		"Authorization", "Basic " + btoa(usr + ":" + pwd));
+	},
         success: function (data) {
             console.info(data);
         }
