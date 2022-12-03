@@ -1,15 +1,13 @@
-const srv = "http://5.45.102.31:5984/wt"
-const date_weight_path = "/_design/wt/_view/data"
 console.log (
     $.ajax({
-    url: srv + date_weight_path,
+    url: config.srv + config.date_weight_path,
     type: 'get',
     headers: {
         'Content-Type': 'application/json'
     },
     beforeSend: function (xhr) {
         xhr.setRequestHeader (
-        "Authorization", "Basic " + btoa(usr + ":" + pwd));
+        "Authorization", "Basic " + btoa(config.usr + ":" + config.pwd));
     },
     success: function (data) {
         console.info(data);
@@ -29,7 +27,7 @@ return `${day}-${month}-${year}`
 
 $("#addWeight").click(function(){
     $.ajax({
-        url: srv,
+        url: config.srv,
         type: 'post',
         data: JSON.stringify({
             weight: $("#weight").val(), 
@@ -41,7 +39,7 @@ $("#addWeight").click(function(){
         dataType: 'json',
 	beforeSend: function (xhr) {
 	    xhr.setRequestHeader (
-		"Authorization", "Basic " + btoa(usr + ":" + pwd));
+		"Authorization", "Basic " + btoa(config.usr + ":" + config.pwd));
 	},
         success: function (data) {
             console.info(data);
