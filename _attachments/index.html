@@ -5,16 +5,50 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="weight.png">
+    <link rel="stylesheet" href="index.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-pink.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
     <title>WT</title>
 
 </head>
 <body>
-    <h1>Hallo Welt</h1>
-    <input id="weight" type="text" inputmode="numeric" pattern="\d*" />
-    <button id= "addWeight" type="button">Click Me!</button>
-    <ul>
-        <li><a href="progress.html">Fortschritt</a></li>
-      </ul>
+    <div class="mdl-layout mdl-js-layout">
+        <header class="mdl-layout__header mdl-layout__header--scroll">
+          <div class="mdl-layout__header-row">
+            <!-- Title -->
+            <span class="mdl-layout-title">Weight Tracking</span>
+            <!-- Add spacer, to align navigation to the right -->
+            <div class="mdl-layout-spacer"></div>
+            <!-- Navigation -->
+            <nav class="mdl-navigation">
+              <a class="mdl-navigation__link" href="progress.html">Progress</a>
+            </nav>
+          </div>
+        </header>
+        <div class="mdl-layout__drawer">
+          <span class="mdl-layout-title">Weight Tracking</span>
+          <nav class="mdl-navigation">
+            <a class="mdl-navigation__link" href="progress.html">Progress</a>
+          </nav>
+        </div>
+        <main class="mdl-layout__content">
+          <div class="page-content">
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                  <input id="weight" class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample4">
+                  <label class="mdl-textfield__label" for="sample4">Weight...</label>
+                  <span class="mdl-textfield__error">Input is not a number!</span>
+                </div>
+                <button id= "addWeight" type="button" class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect">
+                    <i class="material-icons">add</i>
+                  </button>
+              </form>
+          </div>
+        </main>
+      </div>
     <script src="js/jquery-3.6.1.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/index.js"></script>
