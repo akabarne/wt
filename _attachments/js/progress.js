@@ -19,7 +19,6 @@ function drawChart(vector_from_database) {
     chart.draw(data, options);
     }
 
-console.log (
     $.ajax({
     url: config.srv + config.date_weight_path,
     type: 'get',
@@ -33,7 +32,7 @@ console.log (
     success: function (data) {
         drawChart(transformData(data))
     }
-}))
+    })
 
 function transformData(data){
     let vector = [['dateX', 'weightY']]
@@ -41,7 +40,6 @@ function transformData(data){
         let w = data.rows[i].value;
         let d = data.rows[i].key;
         let v = d.split("-").map(parseFloat)
-        console.log(v[0])
         vector.push([new Date(v[0]-1,v[1], v[2]), parseFloat(w)])
     }
     return vector;

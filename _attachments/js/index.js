@@ -1,11 +1,10 @@
 getDate = function(){
-    const date = new Date();
+    let date = new Date();
+    let day = date.getDate();
+    let month = date.getMonth() + 1;
+    let year = date.getFullYear();
 
-let day = date.getDate();
-let month = date.getMonth() + 1;
-let year = date.getFullYear();
-return `${year}-${month}-${day}`
-
+    return `${year}-${month}-${day}`
 };
 
 $("#addWeight").click(function(){
