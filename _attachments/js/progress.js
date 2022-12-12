@@ -40,7 +40,7 @@ function transformData(data){
         let w = data.rows[i].value;
         let d = data.rows[i].key;
         let v = d.split("-").map(parseFloat)
-        vector.push([new Date(v[0]-1,v[1], v[2]), parseFloat(w)])
+        vector.push([new Date(v[0],v[1], v[2]), parseFloat(w)])
     }
     return vector;
 }
