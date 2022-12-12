@@ -1,7 +1,17 @@
+var addZero = function(s){
+    let s = "" + s;
+    if(s.length > 0){
+        return s.padStart(2, "0")
+    }
+    else{
+        return s
+    };
+};
+
 getDate = function(){
     let date = new Date();
-    let day = date.getDate();
-    let month = date.getMonth();
+    let day = addZero(date.getDate());
+    let month = addZero(date.getMonth());
     let year = date.getFullYear();
 
     return `${year}-${month}-${day}`
