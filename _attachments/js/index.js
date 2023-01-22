@@ -1,11 +1,7 @@
 var addZero = function(s){
-    let s = "" + s;
-    if(s.length > 0){
-        return s.padStart(2, "0")
-    }
-    else{
-        return s
-    };
+    var s = s + "";
+    return s.padStart(2, "0")
+
 };
 
 getDate = function(){
